@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECBD916E-13D5-470C-8778-4B9538F559FE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CaseProcesser</RootNamespace>
+    <AssemblyName>CaseProcesser</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro">
+      <HintPath>..\..\..\..\My Projects\Hengrui\EsuCommon\Build Dlls For Windows\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v12.1, Version=12.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="devexpress.xpf.core.v12.1, Version=12.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v12.1, Version=12.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v12.1, Version=12.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v12.1.Core, Version=12.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Layout.v12.1.Core, Version=12.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v12.1, Version=12.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\EsuCommon\Build Dlls For Windows\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\My Projects\Hengrui\EsuCommon\Build Dlls For Windows\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Supeng.Common">
+      <HintPath>..\..\..\..\My Projects\Hengrui\EsuCommon\Build Dlls For Windows\Supeng.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Supeng.Office">
+      <HintPath>..\..\EsuCommon\Build Dlls For Windows\Supeng.Office.dll</HintPath>
+    </Reference>
+    <Reference Include="Supeng.Wpf.Common">
+      <HintPath>..\..\..\..\My Projects\Hengrui\EsuCommon\Build Dlls For Windows\Supeng.Wpf.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BusinessLayer\CaseMgr.cs" />
+    <Compile Include="BusinessLayer\Interfaces\ICaseMgr.cs" />
+    <Compile Include="BusinessLayer\Storages\CaseStorage.cs" />
+    <Compile Include="CaseProcesserBootstrapper.cs" />
+    <Compile Include="BusinessLayer\Interfaces\IStorage.cs" />
+    <Compile Include="Common\CaseTableInfo.cs" />
+    <Compile Include="Common\InputBindingTrigger.cs" />
+    <Compile Include="Common\ModelBase.cs" />
+    <Compile Include="Migrations\201601300242545_InitialCreate.cs" />
+    <Compile Include="Migrations\201601300242545_InitialCreate.Designer.cs">
+      <DependentUpon>201601300242545_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601300415348_first.cs" />
+    <Compile Include="Migrations\201601300415348_first.Designer.cs">
+      <DependentUpon>201601300415348_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601300417398_environment.cs" />
+    <Compile Include="Migrations\201601300417398_environment.Designer.cs">
+      <DependentUpon>201601300417398_environment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601300638579_notifymodify.cs" />
+    <Compile Include="Migrations\201601300638579_notifymodify.Designer.cs">
+      <DependentUpon>201601300638579_notifymodify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601300718163_environment1.cs" />
+    <Compile Include="Migrations\201601300718163_environment1.Designer.cs">
+      <DependentUpon>201601300718163_environment1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601300735322_addtag.cs" />
+    <Compile Include="Migrations\201601300735322_addtag.Designer.cs">
+      <DependentUpon>201601300735322_addtag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601300802294_activities.cs" />
+    <Compile Include="Migrations\201601300802294_activities.Designer.cs">
+      <DependentUpon>201601300802294_activities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601300803021_activities1.cs" />
+    <Compile Include="Migrations\201601300803021_activities1.Designer.cs">
+      <DependentUpon>201601300803021_activities1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601300903544_subjectlength.cs" />
+    <Compile Include="Migrations\201601300903544_subjectlength.Designer.cs">
+      <DependentUpon>201601300903544_subjectlength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602010434535_addcustomer.cs" />
+    <Compile Include="Migrations\201602010434535_addcustomer.Designer.cs">
+      <DependentUpon>201602010434535_addcustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602060247310_addtodo.cs" />
+    <Compile Include="Migrations\201602060247310_addtodo.Designer.cs">
+      <DependentUpon>201602060247310_addtodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602220215502_hotfixcolumn.cs" />
+    <Compile Include="Migrations\201602220215502_hotfixcolumn.Designer.cs">
+      <DependentUpon>201602220215502_hotfixcolumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602220225512_hotfixcolumn1.cs" />
+    <Compile Include="Migrations\201602220225512_hotfixcolumn1.Designer.cs">
+      <DependentUpon>201602220225512_hotfixcolumn1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602220311454_hotfixcolumn2.cs" />
+    <Compile Include="Migrations\201602220311454_hotfixcolumn2.Designer.cs">
+      <DependentUpon>201602220311454_hotfixcolumn2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602220313448_hotfixcolumn21.cs" />
+    <Compile Include="Migrations\201602220313448_hotfixcolumn21.Designer.cs">
+      <DependentUpon>201602220313448_hotfixcolumn21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Attachment.cs" />
+    <Compile Include="Models\Hotfix.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="ViewModels\Contents\AttachmentsView.xaml.cs">
+      <DependentUpon>AttachmentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Contents\DetailsView.xaml.cs">
+      <DependentUpon>DetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Contents\EnvironmentView.xaml.cs">
+      <DependentUpon>EnvironmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Contents\HotfixView.xaml.cs">
+      <DependentUpon>HotfixView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\DialogWindows\ActivityEditViewModel.cs" />
+    <Compile Include="ViewModels\DialogWindows\CaseEditViewModel.cs" />
+    <Compile Include="ViewModels\DialogWindows\EnvironmentEditViewModel.cs" />
+    <Compile Include="ViewModels\DialogWindows\TagEditViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\DetailsControl.xaml.cs">
+      <DependentUpon>DetailsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\CaseContext.cs" />
+    <Page Include="ViewModels\Contents\AttachmentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\Contents\DetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\Contents\EnvironmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\Contents\HotfixView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\MainWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DetailsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\Case.cs" />
+    <Compile Include="Models\Environment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Migrations\201601300242545_InitialCreate.resx">
+      <DependentUpon>201601300242545_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601300415348_first.resx">
+      <DependentUpon>201601300415348_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601300417398_environment.resx">
+      <DependentUpon>201601300417398_environment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601300638579_notifymodify.resx">
+      <DependentUpon>201601300638579_notifymodify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601300718163_environment1.resx">
+      <DependentUpon>201601300718163_environment1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601300735322_addtag.resx">
+      <DependentUpon>201601300735322_addtag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601300802294_activities.resx">
+      <DependentUpon>201601300802294_activities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601300803021_activities1.resx">
+      <DependentUpon>201601300803021_activities1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601300903544_subjectlength.resx">
+      <DependentUpon>201601300903544_subjectlength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602010434535_addcustomer.resx">
+      <DependentUpon>201602010434535_addcustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602060247310_addtodo.resx">
+      <DependentUpon>201602060247310_addtodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602220215502_hotfixcolumn.resx">
+      <DependentUpon>201602220215502_hotfixcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602220225512_hotfixcolumn1.resx">
+      <DependentUpon>201602220225512_hotfixcolumn1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602220311454_hotfixcolumn2.resx">
+      <DependentUpon>201602220311454_hotfixcolumn2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602220313448_hotfixcolumn21.resx">
+      <DependentUpon>201602220313448_hotfixcolumn21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

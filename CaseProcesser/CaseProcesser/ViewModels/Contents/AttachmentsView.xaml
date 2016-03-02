@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="CaseProcesser.ViewModels.Contents.AttachmentsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:cal="http://www.caliburnproject.org"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <dxe:ListBoxEdit ItemsSource="{Binding}" HorizontalContentAlignment="Stretch">
+            <dxe:ListBoxEdit.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Background="BurlyWood">
+                        <TextBlock Text="{Binding Name}" Margin="5" Width="200" VerticalAlignment="Center"/>
+                        <Button Content="Open" Margin="5" Width="80">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <cal:ActionMessage MethodName="OpenAttachment">
+                                        <cal:Parameter Value="{Binding Path=FileName}"/>
+                                    </cal:ActionMessage>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
+                    </StackPanel>
+                </DataTemplate>
+            </dxe:ListBoxEdit.ItemTemplate>
+        </dxe:ListBoxEdit>
+    </Grid>
+</UserControl>
