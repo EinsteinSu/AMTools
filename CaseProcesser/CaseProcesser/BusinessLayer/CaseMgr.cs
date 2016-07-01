@@ -33,7 +33,7 @@ namespace CaseProcesser.BusinessLayer
         public ObservableCollection<Case> GetCases()
         {
             var collection = new ObservableCollection<Case>();
-            foreach (var c in db.Cases.Include(i => i.Activities))
+            foreach (var c in db.Cases.Include(i => i.Activities).Where(w => !w.Exported))
             {
 
                 var directory = Path.Combine(DirectoryHelper.CurrentDirectory, "Attachments", c.CRNumber);

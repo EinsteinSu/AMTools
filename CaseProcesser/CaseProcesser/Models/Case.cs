@@ -30,6 +30,7 @@ namespace CaseProcesser.Models
         private string _subject;
         private Tag _tag;
         private bool _toDo;
+        private bool _exported;
 
         public Case()
         {
@@ -266,6 +267,17 @@ namespace CaseProcesser.Models
             }
         }
 
+        public bool Exported
+        {
+            get { return _exported; }
+            set
+            {
+                if (value == _exported) return;
+                _exported = value;
+                NotifyOfPropertyChange(() => Exported);
+            }
+        }
+
         [Display(AutoGenerateField = false)]
         public string CaseUrl
         {
@@ -318,7 +330,8 @@ namespace CaseProcesser.Models
         WatiForSupport,
         DefectConfirmed,
         New,
-        Closed
+        Closed,
+        EnhancementRequestCreated
     }
 
     public static class CaseStatusExtensions
@@ -333,6 +346,10 @@ namespace CaseProcesser.Models
                     return "Defect Confirmed";
                 case CaseStatus.WatiForSupport:
                     return "Wait for Support";
+                case CaseStatus.Closed:
+                    return "Closed";
+                case CaseStatus.EnhancementRequestCreated:
+                    return "Enhancement Request Created";
                 default:
                     return "New";
             }

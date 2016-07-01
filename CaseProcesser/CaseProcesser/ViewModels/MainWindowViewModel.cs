@@ -22,6 +22,7 @@ namespace CaseProcesser.ViewModels
         private ObservableCollection<Case> _collection;
         private Case _currentItem;
         private bool _fromLoadFile;
+        private string _filter;
 
         public MainWindowViewModel()
         {
@@ -142,6 +143,26 @@ namespace CaseProcesser.ViewModels
                 SaveCase();
             }
         }
+
+        public void CopyCaseNumber()
+        {
+            string caseNumber = string.Empty;
+            if (CurrentItem != null)
+            {
+                caseNumber = CurrentItem.CRNumber;
+                Clipboard.SetText(caseNumber);
+            }
+        }
+
+        public void CopyForFTS()
+        {
+            string info = string.Empty;
+            if (CurrentItem != null)
+            {
+                info = CurrentItem.CRNumber + "-1: " + CurrentItem.Subject;
+                Clipboard.SetText(info);
+            }
+        }
         #endregion
 
         #region Case Edit
@@ -203,6 +224,17 @@ namespace CaseProcesser.ViewModels
         #endregion
 
         #region Properties
+
+        public string Filter
+        {
+            get { return _filter; }
+            set
+            {
+                if (value == _filter) return;
+                _filter = value;
+                NotifyOfPropertyChange(() => Filter);
+            }
+        }
 
         public Case CurrentItem
         {

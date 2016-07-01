@@ -8,6 +8,7 @@
         xmlns:contents="clr-namespace:CaseProcesser.ViewModels.Contents"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         xmlns:common="clr-namespace:CaseProcesser.Common"
+        xmlns:views="clr-namespace:CaseProcesser.Views"
         Title="Case processer" Height="300" Width="300" WindowState="Maximized">
 
     <Grid>
@@ -39,6 +40,16 @@
                             <cal:ActionMessage MethodName="Save"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
+                </MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="File">
+                <MenuItem Header="View ToDo Items">
+                    <!--<i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <cal:ActionMessage MethodName="Open"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>-->
                 </MenuItem>
             </MenuItem>
         </Menu>
@@ -74,7 +85,22 @@
                                                     </i:Interaction.Triggers>
                                                 </MenuItem>
                                                 <Separator/>
-                                                <MenuItem Header="Open in website">
+                                                <MenuItem Header="Copy Case Number">
+                                                    <i:Interaction.Triggers>
+                                                        <i:EventTrigger EventName="Click">
+                                                            <cal:ActionMessage MethodName="CopyCaseNumber"/>
+                                                        </i:EventTrigger>
+                                                    </i:Interaction.Triggers>
+                                                </MenuItem>
+                                                <MenuItem Header="Copy For FTS Info">
+                                                    <i:Interaction.Triggers>
+                                                        <i:EventTrigger EventName="Click">
+                                                            <cal:ActionMessage MethodName="CopyForFTS"/>
+                                                        </i:EventTrigger>
+                                                    </i:Interaction.Triggers>
+                                                </MenuItem>
+                                                <Separator/>
+                                                <MenuItem Header="Open in website" Background="SteelBlue">
                                                     <i:Interaction.Triggers>
                                                         <i:EventTrigger EventName="Click">
                                                             <cal:ActionMessage MethodName="OpenWebsite"/>
@@ -90,7 +116,7 @@
                                                     </i:Interaction.Triggers>
                                                 </MenuItem>
                                                 <Separator/>
-                                                <MenuItem Header="Add Activity">
+                                                <MenuItem Header="Add Activity" Background="Coral">
                                                     <i:Interaction.Triggers>
                                                         <i:EventTrigger EventName="Click">
                                                             <cal:ActionMessage MethodName="AddActivity"/>
@@ -126,9 +152,36 @@
                                                             </i:EventTrigger>
                                                         </i:Interaction.Triggers>
                                                     </MenuItem>
+                                                    <MenuItem Header="Reproducing">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <cal:ActionMessage MethodName="UpdateInternalStatus">
+                                                                    <cal:Parameter Value="3"></cal:Parameter>
+                                                                </cal:ActionMessage>
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                    </MenuItem>
+                                                    <MenuItem Header="Debugging">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <cal:ActionMessage MethodName="UpdateInternalStatus">
+                                                                    <cal:Parameter Value="4"></cal:Parameter>
+                                                                </cal:ActionMessage>
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                    </MenuItem>
+                                                    <MenuItem Header="Done">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <cal:ActionMessage MethodName="UpdateInternalStatus">
+                                                                    <cal:Parameter Value="5"></cal:Parameter>
+                                                                </cal:ActionMessage>
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                    </MenuItem>
                                                 </MenuItem>
                                                 <Separator/>
-                                                <MenuItem Header="Export To Excel">
+                                                <MenuItem Header="Export To Excel" Background="Green">
                                                     <i:Interaction.Triggers>
                                                         <i:EventTrigger EventName="Click">
                                                             <cal:ActionMessage MethodName="ExportToExcel"/>
@@ -147,32 +200,7 @@
                                         </ContextMenu.ItemsSource>
                                     </ContextMenu>
                                 </Grid.ContextMenu>
-                                <dxg:GridControl ItemsSource="{Binding Collection}">
-                                    <dxg:GridControl.Columns>
-                                        <dxg:GridColumn Width="10" Header="">
-                                            <dxg:GridColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <Border Background="{Binding Data.InternalBackColor}" CornerRadius="10">
-                                                        <!--<TextBlock Text="{Binding Data.InternalStatus}" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>-->
-                                                    </Border>
-                                                </DataTemplate>
-                                            </dxg:GridColumn.CellTemplate>
-                                        </dxg:GridColumn>
-                                        <dxg:GridColumn FieldName="InternalStatus" Width="30"></dxg:GridColumn>
-                                        <dxg:GridColumn FieldName="Level" Width="30"></dxg:GridColumn>
-                                        <dxg:GridColumn FieldName="CRNumber" Width="30"/>
-                                        <dxg:GridColumn FieldName="Status" Width="50"></dxg:GridColumn>
-                                        <dxg:GridColumn FieldName="AMVersion" Width="30"></dxg:GridColumn>
-                                        <dxg:GridColumn FieldName="Component" Width="50"></dxg:GridColumn>
-                                        <dxg:GridColumn FieldName="Subject"></dxg:GridColumn>
-                                        <dxg:GridColumn FieldName="Location" Width="30"></dxg:GridColumn>
-                                        <dxg:GridColumn FieldName="Customer" Width="50"></dxg:GridColumn>
-                                        <dxg:GridColumn FieldName="Owner" Width="50"></dxg:GridColumn>
-                                    </dxg:GridControl.Columns>
-                                    <dxg:GridControl.View>
-                                        <dxg:TableView AutoWidth="True" FocusedRow="{Binding CurrentItem,Mode=TwoWay}" ShowSearchPanelMode="Always" ShowGroupPanel="False" AllowEditing="False" />
-                                    </dxg:GridControl.View>
-                                </dxg:GridControl>
+                                <views:CaseGrid/>
                             </Grid>
                         </DockPanel>
                     </dxdo:DocumentPanel>
